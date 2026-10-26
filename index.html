@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С днем рождения, любовь моя ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            cursor: pointer;
+        }
+        /* Zarf Stili */
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background: #f4f1ea;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.5s ease;
+        }
+        .envelope:hover {
+            transform: scale(1.05);
+        }
+        /* Zarfın Kapağı */
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-top: 110px solid #e3dec3;
+            transform-origin: top;
+            transition: transform 0.4s ease 0.2s;
+            z-index: 3;
+        }
+        /* Mühür */
+        .seal {
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 45px;
+            height: 45px;
+            background: #b30000;
+            border-radius: 50%;
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+        /* Mektup Kağıdı */
+        .letter {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            height: 180px;
+            background: white;
+            border-radius: 5px;
+            padding: 15px;
+            box-sizing: border-box;
+            transition: transform 0.5s ease;
+            z-index: 2;
+            text-align: left;
+            font-size: 13px;
+            color: #333;
+            overflow-y: auto;
+        }
+        /* Açılma Efekti Sınıfları */
+        .open .envelope::before {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+        .open .letter {
+            transform: translateY(-135px);
+            z-index: 5;
+            height: 280px;
+        }
+        .open .seal {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .hint {
+            margin-top: 20px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .letter img {
+            width: 100%;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" onclick="openEnvelope()">
+        <div class="envelope" id="env">
+            <div class="seal">❤️</div>
+            <div class="letter">
+                <h3>С днем рождения, моя любимая ❤️</h3>
+                <p>C днем рождения моя любимая. Сегодня особенный день, и хотя между нами километры, мое сердце всегда рядом с тобой. Прошел уже целый год с тех пор, как мы вместе, и это лучшее время в моей жизни. Как жаль, что в прошлый твой день рождения мы еще не были вместе, а сейчас судьба снова развела нас по разным городам... Но знаешь что? Никакое расстояние не способно уменьшить то, как сильно я тебя люблю. Спасибо тебе за каждый прекрасный момент, за твою улыбку и за то, что ты делаешь нашу жизнь невероятно счастливой уже целый год. Ты — самое лучшее, что у меня есть. Желаю тебе самого счастливого дня рождения, моя девочка. Скоро мы обязательно будем вместе❤️</p>
+                
+                <!-- Fotoğraf -->
+                <img src="https://i.ibb.co.com/JW2Ngf4W/122d8fc9-61c4-45e6-b1f1-6a33f94bc816.jpg" alt="Sevgilim">
+            </div>
+        </div>
+        <div class="hint">Нажми, чтобы открыть! 💌</div>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            document.getElementById('env').classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
